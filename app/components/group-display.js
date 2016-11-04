@@ -66,8 +66,9 @@ export default Ember.Component.extend({
     activateReview() {
       this.sendAction('activateReview');
     },
-    addToProfile() {
-      this.get('profile').addGroup(this.get('group'));
+    addToProfile(group) {
+      this.get('profile').addGroup(group);
+      this.sendAction('addedFavorite', group);
     }
   }
 });

@@ -3,7 +3,7 @@
   {{#if profile.groups}}
     <h2>Favorites</h2>
     {{#each profile.groups as |group|}}
-      <h1>{{group.title}}</h1>
+      {{#link-to 'group-page' group.id}}<h3>{{group.title}} {{group.sport}}, {{group.day}}</h3>{{/link-to}}
     {{/each}}
   {{else}}
     <h2>No Favorites Yet!</h2>

@@ -35,6 +35,9 @@ export default Ember.Route.extend({
     deleteReview(review) {
       review.destroyRecord();
       this.transitionTo('group-page');
+    },
+    addedFavorite(group) {
+      this.transitionTo('group-page', group.id);
     }
   }
 });
