@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('group-page', {path: 'group-page/:group_id'});
   this.route('profile-page');
   this.route('log-in');
+  this.route('about');
 });
 
 export default Router;
