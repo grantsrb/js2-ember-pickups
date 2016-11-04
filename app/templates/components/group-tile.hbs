@@ -1,23 +1,13 @@
 <div class="row panel" onclick={{action 'reRoute' group}}>
   <div class="col-sm-5">
-    <h2>{{group.location}} {{group.sport}}</h2>
+    <h2>{{header}}</h2>
     <h3>{{group.day}} at {{group.time}}</h3>
-    <ul>
-      <li>{{group.skill}}</li>
-      {{#if group.cost}}
-        <li>${{group.cost}}</li>
-      {{/if}}
-      <li><strong>Details:</strong></li>
-      <ul>
-        <li>{{group.details}}</li>
-      </ul>
-    </ul>
   </div>
   <div class="col-offset-sm-1 col-sm-4">
     {{#if group.image}}
       <img class="field" src=group.image/>
     {{else}}
-      <img class="field" src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=ccf49c77862a41c128526e4260210f8a/">
+      <img class="field" src="https://images.unsplash.com/12/sky.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=92c52d2912dd938c169ca737ae98e8f1">
     {{/if}}
   </div>
 </div>

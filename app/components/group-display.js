@@ -1,6 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  groupInfo: Ember.computed('group.day', 'group.time', 'group.location', function() {
+    return this.get('group.day') + ', ' + this.get('group.time') + ', ' +  this.get('group.location');
+  }),
+  header: Ember.computed('group.title', 'group.sport', function() {
+    return this.get("group.title") + " " + this.get('group.sport');
+  }),
   regularDisplay: true,
   displayNewReview: false,
   skillChoice: '',

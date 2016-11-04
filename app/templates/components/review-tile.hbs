@@ -1,19 +1,19 @@
 <br>
 <div class="row">
   <div class="ui raised card">
-  <div class="content">
-    <div class="header">{{review.author}}</div>
-    <div class="meta">
-      <span class="category">{{skill-help review.skillRating}} - {{friend-help review.friendlinessRating}}</span>
+    <div class="content">
+      <div class="header">{{review.author}}</div>
+      <div class="meta">
+        <span class="category">{{skill-help review.skillRating}} - {{friend-help review.friendlinessRating}}</span>
+      </div>
+      <div class="description">
+        <p>{{review.details}}</p>
+      </div>
     </div>
-    <div class="description">
-      <p>{{review.details}}</p>
+    <div class="extra content">
+      <div class="right floated author">
+        <button {{action 'deleteReview'}}>Delete</button>
+      </div>
     </div>
   </div>
-  <div class="extra content">
-    <div class="right floated author">
-      <button {{action 'deleteReview'}}>Delete</button>
-    </div>
-  </div>
-</div>
 </div>
