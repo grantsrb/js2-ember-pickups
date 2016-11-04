@@ -9,6 +9,8 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('new-group');
   this.route('group-page', {path: 'group-page/:group_id'});
+  this.route('profile-page');
+  this.route('log-in');
 });
 
 export default Router;

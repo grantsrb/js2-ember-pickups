@@ -9,5 +9,10 @@ export default Ember.Service.extend({
   removeGroup: function(group) {
     var groups = this.get('groups');
     groups.splice(groups.indexOf(group), 1);
+  },
+  setUserName: function(userName) {
+    console.log(userName);
+    this.set('userName', userName);
+    console.log(this.get('userName'));
   }
 });

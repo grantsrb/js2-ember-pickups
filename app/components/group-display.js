@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  profile: Ember.inject.service(),
   groupInfo: Ember.computed('group.day', 'group.time', 'group.location', function() {
     return this.get('group.day') + ', ' + this.get('group.time') + ', ' +  this.get('group.location');
   }),
@@ -64,6 +65,9 @@ export default Ember.Component.extend({
     },
     activateReview() {
       this.sendAction('activateReview');
+    },
+    addToProfile() {
+      this.get('profile').addGroup(this.get('group'));
     }
   }
 });

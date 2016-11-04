@@ -1,0 +1,14 @@
+{{#if profile.userName}}
+  <h4>Welcome {{profile.userName}}</h4>
+  {{#if profile.groups}}
+    <h2>Favorites</h2>
+    {{#each profile.groups as |group|}}
+      <h1>{{group.title}}</h1>
+    {{/each}}
+  {{else}}
+    <h2>No Favorites Yet!</h2>
+  {{/if}}
+{{else}}
+  <h2>You must sign in first!</h2>
+  {{#link-to 'log-in'}}<button class="ui primary button">Sign In</button>{{/link-to}}
+{{/if}}
