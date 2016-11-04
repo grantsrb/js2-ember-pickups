@@ -1,1 +1,15 @@
-{{yield}}
+<div class="panel">
+  <h2>{{group.location}} {{group.sport}}</h2>
+  <h3>{{group.day}} at {{group.time}}</h3>
+  <ul>
+    <li>{{group.skill}}</li>
+    {{#if group.cost}}
+      <li>${{group.cost}}</li>
+    {{/if}}
+    <li><strong>Details:</strong></li>
+    <ul>
+      <li>{{group.details}}</li>
+    </ul>
+  </ul>
+
+</div>
