@@ -12,13 +12,15 @@ export default Ember.Component.extend({
     },
     makeGroup() {
       var params = {
+        title: this.get('title') ? this.get('title'):(this.get('location')?this.get('location'):'No Title'),
         sport: this.get('sportChoice'),
         location: this.get('location') ? this.get('location'):'',
         day: this.get('day') ? this.get('day'):'',
         time: this.get('time') ? this.get('time'):'',
         skill: this.get('skillChoice'),
         cost: this.get('cost') ? this.get('cost'):'',
-        details: this.get('details') ? this.get('details'):''
+        details: this.get('details') ? this.get('details'):'',
+        image: this.get('image')?this.get('image'):''
       };
       this.set('sportChoice', 'Soccer');
       this.set('skillChoice', "All Skill Levels");

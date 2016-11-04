@@ -14,6 +14,10 @@
     </ul>
   </div>
   <div class="col-offset-sm-1 col-sm-4">
-    <img class="field" src="http://www.baezsports.com/wp-content/uploads/2011/09/Web1-.jpg"/>
+    {{#if group.image}}
+      <img class="field" src=group.image/>
+    {{else}}
+      <img class="field" src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=ccf49c77862a41c128526e4260210f8a/">
+    {{/if}}
   </div>
 </div>

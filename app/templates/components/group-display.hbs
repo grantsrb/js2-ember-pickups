@@ -1,1 +1,56 @@
-{{yield}}
+{{#if regularDisplay}}
+  <div class="row panel">
+    {{#if group.image}}
+      <img src=group.image>
+    {{else}}
+      <img class="field" src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=ccf49c77862a41c128526e4260210f8a" />
+    {{/if}}
+    <h2>{{group.title}} {{group.sport}}</h2>
+    <h3>{{group.day}}, {{group.time}}, {{group.location}}</h3>
+    <ul>
+      <li><strong>Skill Level:</strong> {{group.skill}}</li>
+      {{#if group.cost}}
+        <li><strong>Cost:</strong> {{group.cost}}</li>
+      {{/if}}
+      <li><strong>Details:</strong></li>
+      <ul>
+        <li>{{group.details}}</li>
+      </ul>
+    </ul>
+  </div>
+  <div class="button-bar">
+    <button class="ui primary button" {{action 'updateDisplay' regularDisplay}}>Update</button>
+    <button class="ui button" {{action 'deleteGroup'}}>Delete</button>
+  </div>
+
+{{else}}
+
+  <div class="row panel">
+    <h2>{{input value=title id='title' placeholder=group.title}} <select id="sport" onchange={{action 'sportChoice' value="target.value"}}>
+      <option value="Soccer" selected>Soccer</option>
+      <option value="Ultimate">Ultimate</option>
+      <option value="Football">Football</option>
+      <option value="Basketball">Basketball</option>
+      <option value="Hockey">Hockey</option>
+      <option value="Baseball">Baseball</option>
+    </select></h2>
+    <h3>{{input value=day id='day' placeholder=group.day}}, {{input value=time id='time' placeholder=group.time}}, {{input value=location id='location' placeholder=group.location}}</h3>
+    <ul>
+      <li><strong>Skill Level:</strong> <select id="skill" onchange={{action 'skillChoice' value="target.value"}}>
+        <option value="All Skill Levels" selected>All Skill Levels</option>
+        <option value="inexperienced">Inexperienced</option>
+        <option value="Experienced">Experienced</option>
+        <option value="Advanced">Advanced</option>
+      </select></li>
+      <li><strong>Cost:</strong> {{input value=cost id='cost'}}</li>
+      <li><strong>Details:</strong></li>
+      <ul>
+        <li>{{textarea value=details id='details'}}</li>
+      </ul>
+    </ul>
+  </div>
+  <div class="button-bar">
+    <button class="ui primary button" {{action 'updateGroup'}}>Submit</button>
+    <button class="ui button" {{action 'updateDisplay' regularDisplay }}>Cancel</button>
+  </div>
+{{/if}}
