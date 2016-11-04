@@ -2,10 +2,12 @@
   <div class="col-sm-5">
     <h2>{{header}}</h2>
     <h3>{{group.day}} at {{group.time}}</h3>
+    <br>
+    {{avg-skill group.reviews}}|{{avg-friend group.reviews}}
   </div>
   <div class="col-offset-sm-1 col-sm-4">
     {{#if group.image}}
-      <img class="field" src=group.image/>
+      <img class="field" src={{group.image}}/>
     {{else}}
       <img class="field" src="https://images.unsplash.com/12/sky.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=92c52d2912dd938c169ca737ae98e8f1">
     {{/if}}
