@@ -17,6 +17,13 @@ module.exports = function(environment) {
       }
     },
 
+    firebase: {
+      apiKey: "AIzaSyB6N73Uk8IP_HIxxBTRPUCZcJG4A3Rm8H8",
+      authDomain: "pickup-reviews.firebaseapp.com",
+      databaseURL: "https://pickup-reviews.firebaseio.com",
+      storageBucket: "pickup-reviews.appspot.com"
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
