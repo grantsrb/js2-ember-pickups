@@ -9,5 +9,6 @@ export default DS.Model.extend({
   time: DS.attr(),
   skill: DS.attr(),
   cost: DS.attr(),
-  details: DS.attr()
+  details: DS.attr(),
+  reviews: DS.hasMany('review', {async: true})
 });

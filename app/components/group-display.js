@@ -2,9 +2,20 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   regularDisplay: true,
+  displayNewReview: false,
   skillChoice: '',
   sportChoice: '',
   actions: {
+    toggleReview(status) {
+      if (status) {
+        this.set('displayNewReview', false);
+      } else {
+        this.set('displayNewReview', true);
+      }
+    },
+    cancelNewReview() {
+      this.set('displayNewReview', false);
+    },
     updateDisplay(status) {
       if(status) {
         this.set('regularDisplay', false);
@@ -21,7 +32,9 @@ export default Ember.Component.extend({
       this.set('skillChoice', target);
     },
     deleteGroup() {
-      this.sendAction('deleteGroup', this.get('group'));
+      if (confirm('Are you sure you want to delete this group?\nThis cannot be undone.')) {
+        this.sendAction('deleteGroup', this.get('group'));
+      }
     },
     updateGroup() {
       var params = {
@@ -36,6 +49,13 @@ export default Ember.Component.extend({
       };
       this.set('regularDisplay', true);
       this.sendAction('updateGroup', params, this.get('group'));
+    },
+    makeReview(params) {
+      this.set('displayNewReview', false);
+      this.sendAction('makeReview', params);
+    },
+    activateReview() {
+      this.sendAction('activateReview');
     }
   }
 });

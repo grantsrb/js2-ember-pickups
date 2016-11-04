@@ -6,7 +6,12 @@ export default Ember.Route.extend({
   },
   actions: {
     deleteGroup(group) {
-      group.destroyRecord();
+      var reviewDeletions = group.get('reviews').map(function(review) {
+        return review.destroyRecord();
+      });
+      Ember.RSVP.all(reviewDeletions).then(function() {
+        return group.destroyRecord();
+      });
       this.transitionTo('index');
     },
     updateGroup(params, group) {
@@ -17,6 +22,19 @@ export default Ember.Route.extend({
       });
       group.save();
       this.transitionTo('group-page', group.id);
+    },
+    makeReview(params) {
+      var newReview = this.store.createRecord('review', params);
+      var group = params.group;
+      group.get('reviews').addObject(newReview);
+      newReview.save().then(function() {
+        return group.save();
+      });
+      this.transitionTo('group-page', group.id);
+    },
+    deleteReview(review) {
+      review.destroyRecord();
+      this.transitionTo('group-page');
     }
   }
 });

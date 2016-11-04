@@ -19,8 +19,15 @@
     </ul>
   </div>
   <div class="button-bar">
-    <button class="ui primary button" {{action 'updateDisplay' regularDisplay}}>Update</button>
-    <button class="ui button" {{action 'deleteGroup'}}>Delete</button>
+    {{#unless displayNewReview}}
+      <button class="ui primary button" {{action 'updateDisplay' regularDisplay}}>Update</button>
+      <button class="ui primary button" {{action 'toggleReview'}}>Review</button>
+      <button class="ui button" {{action 'deleteGroup'}}>Delete</button>
+    {{else}}
+      <button class="ui primary button" {{action 'updateDisplay' regularDisplay}}>Update</button>
+      <button class="ui button" {{action 'deleteGroup'}}>Delete</button>
+      {{new-review group=group makeReview='makeReview' cancelNewReview='cancelNewReview'}}
+    {{/unless}}
   </div>
 
 {{else}}
