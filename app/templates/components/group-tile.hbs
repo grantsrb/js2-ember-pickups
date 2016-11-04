@@ -1,15 +1,19 @@
-<div class="panel">
-  <h2>{{group.location}} {{group.sport}}</h2>
-  <h3>{{group.day}} at {{group.time}}</h3>
-  <ul>
-    <li>{{group.skill}}</li>
-    {{#if group.cost}}
-      <li>${{group.cost}}</li>
-    {{/if}}
-    <li><strong>Details:</strong></li>
+<div class="row panel" onclick={{action 'reRoute' group}}>
+  <div class="col-sm-5">
+    <h2>{{group.location}} {{group.sport}}</h2>
+    <h3>{{group.day}} at {{group.time}}</h3>
     <ul>
-      <li>{{group.details}}</li>
+      <li>{{group.skill}}</li>
+      {{#if group.cost}}
+        <li>${{group.cost}}</li>
+      {{/if}}
+      <li><strong>Details:</strong></li>
+      <ul>
+        <li>{{group.details}}</li>
+      </ul>
     </ul>
-  </ul>
-
+  </div>
+  <div class="col-offset-sm-1 col-sm-4">
+    <img class="field" src="http://www.baezsports.com/wp-content/uploads/2011/09/Web1-.jpg"/>
+  </div>
 </div>

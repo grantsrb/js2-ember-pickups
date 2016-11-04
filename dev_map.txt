@@ -1,12 +1,12 @@
 Models:
   Pickup Group
-  sport 
-  location 
-  day 
-  time 
-  skill 
-  cost 
-  details
+    sport
+    location
+    day
+    time
+    skill
+    cost
+    details
 
   Reviews
     author
