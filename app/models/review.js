@@ -5,5 +5,6 @@ export default DS.Model.extend({
   friendlinessRating: DS.attr(),
   skillRating: DS.attr(),
   details: DS.attr(),
+  timestamp: DS.attr(),
   group: DS.belongsTo('group', {async: true})
 });

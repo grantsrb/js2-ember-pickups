@@ -11,6 +11,7 @@ export default Ember.Component.extend({
       this.set('skillChoice', target);
     },
     makeGroup() {
+      var date = new Date();
       var params = {
         title: this.get('title') ? this.get('title'):(this.get('location')?this.get('location'):'No Title'),
         sport: this.get('sportChoice'),
@@ -20,7 +21,8 @@ export default Ember.Component.extend({
         skill: this.get('skillChoice'),
         cost: this.get('cost') ? this.get('cost'):'',
         details: this.get('details') ? this.get('details'):'',
-        image: this.get('image')?this.get('image'):''
+        image: this.get('image')?this.get('image'):'',
+        timestamp: date.toDateString()
       };
       this.set('sportChoice', 'Soccer');
       this.set('skillChoice', "All Skill Levels");

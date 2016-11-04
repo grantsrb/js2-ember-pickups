@@ -11,12 +11,14 @@ export default Ember.Component.extend({
       this.set('friendlinessRatingChoice', target);
     },
     makeReview() {
+      var date = new Date();
       var params = {
         author: this.get('author') ? this.get('author'):"Anonymous",
         friendlinessRating: this.get('skillRatingChoice'),
         skillRating: this.get('friendlinessRatingChoice'),
         details: this.get('details') ? this.get('details'):"No description",
-        group: this.get('group')
+        group: this.get('group'),
+        timestamp: date.toDateString()
       };
       this.set('author', '');
       this.set('skillRatingChoice', '3');

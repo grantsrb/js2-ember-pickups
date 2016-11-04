@@ -43,6 +43,7 @@ export default Ember.Component.extend({
       }
     },
     updateGroup() {
+      var date = new Date();
       var params = {
         title: this.get('title')?this.get('title'):this.get('group.title'),
         sport: this.get('sportChoice'),
@@ -52,6 +53,7 @@ export default Ember.Component.extend({
         skill: this.get('skillChoice'),
         cost: this.get('cost')?this.get('cost'):this.get('group.cost'),
         details: this.get('details')?this.get('cost'):this.get('group.cost'),
+        timestamp: date.toDateString()
       };
       this.set('regularDisplay', true);
       this.sendAction('updateGroup', params, this.get('group'));
