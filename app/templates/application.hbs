@@ -1,0 +1,40 @@
+<div class="container">
+  {{#link-to 'index'}}<h1>Pickups</h1>{{/link-to}}
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="ui vertical menu">
+        <div class="item">
+          <div class="ui input"><input type="text" placeholder="Search..."></div>
+        </div>
+        <div class="item">
+          {{#link-to 'index'}}Home{{/link-to}}
+          <div class="menu">
+            <a class="active item">Location</a>
+            <a class="item">Sport</a>
+            <a class="item">Day</a>
+            <a class="item">Skill</a>
+            <a class="item">Cost</a>
+          </div>
+        </div>
+        <a class="item">
+
+        </a>
+        <a class="item">
+        Messages
+        </a>
+        <div class="ui dropdown item">
+          More
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item"><i class="edit icon"></i> Edit Profile</a>
+            <a class="item"><i class="globe icon"></i> Choose Language</a>
+            <a class="item"><i class="settings icon"></i> Account Settings</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-10">
+      {{outlet}}
+    </div>
+  </div>
+</div>

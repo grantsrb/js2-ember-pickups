@@ -1,0 +1,31 @@
+Models:
+  Pickup Group
+    sport
+    field
+    times/days
+    recommended skill level
+    cost
+    details
+
+  Reviews
+    author
+    skill rating
+    friendliness rating
+    details
+
+Home Page:
+  display pickup tiles
+    route to dynamic display page
+  route to new pickup page
+
+Pickup-Display Page:
+  display in more detail
+  update/delete buttons
+
+New Pickup Page:
+  make new pickup group
+
+My Pickups Page:
+  Display selected pickup groups
+
+Consider user authentication
